@@ -107,30 +107,42 @@ sudo apt-get update
 * mosquitto – the MQTT broker (or in other words, a server)
 * mosquitto-clients – command line clients, very useful in debugging
 * python-mosquitto – the Python language bindings
+
 #
+
 `
 sudo apt-get install mosquitto mosquitto-clients python-mosquitto
 `
+
 #
+
 As is the case with most packages from Debian, the broker is immediately started. Since we have to configure it first, stop it.
+
 #
+
 `
 sudo /etc/init.d/mosquitto stop
 `
+
 #
+
 Now that the MQTT broker is installed on the Pi we will add some basic security.
+
 #
+
 Create a config file:
+
 #
+
 `
 cd /etc/mosquitto/conf.d/
 `
 `
 sudo nano mosquitto.conf
 `
-#
+**
 Let's stop anonymous clients connecting to our broker by adding a few lines to your config file. To control client access to the broker we also need to define valid client names and passwords. Add the lines:
-#
+**
 `
 allow_anonymous false
 `
