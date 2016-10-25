@@ -305,3 +305,52 @@ Close your web browser and reopen the web browser.
 
 ***
 # Step 6: Adding autostart file for every boot.
+
+How to make an autostart file at every boot.
+
+`
+cd /etc/xdg/autostart/ 
+`
+
+(If there is no ‘autostart' folder, make it below)
+
+`
+mkdir autostart  
+`
+
+`
+cd autostart 
+`
+
+`
+sudo nano flyMosquitto.desktop
+`
+
+Type the below (this will enclose the file) Or Put ‘flyMosquitto.desktop’ file into autostart folder.
+
+
+````
+[Desktop Entry] 
+Type=Application
+Name=flyMosquitto
+Comment=Fly my mosquitto
+Exec=cd /etc/mosquitto/conf.d/
+Exec=mosquitto
+````
+
+Make it to autostart the Node-RED at every boot
+
+`
+sudo systemctl enable nodered.service
+`
+
+As shown in the above picture, please check the last line is as below.
+
+
+23 Oct 06:21:22 - [info] [mqtt-broker:2be4dc46.47a5b4] Connected to broker: mqtt://localhost:1883
+
+
+This is clearly working as a message broker(Mosquitto) on Raspberry Pi2.
+
+
+
