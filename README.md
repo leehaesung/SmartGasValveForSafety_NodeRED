@@ -156,36 +156,35 @@ sudo mosquitto_passwd -c /etc/mosquitto/conf.d/passwd pi
 ### Testing Mosquitto on Raspberry Pi
 Now that Mosquitto is installed we can perform a local test to see if it is working:
 Open three terminal windows. In one, make sure the Mosquitto broker is running:
-#
+*
 `
 mosquitto
 `
-#
+*
 * In the next terminal, run the command line subscriber:
-#
+*
 `
 mosquitto_sub -v -t 'topic/test'
 `
-#
+*
 * You should see the first terminal window echo that a new client is connected. In the next terminal, run the command line publisher:
-#
+*
 `
 mosquitto_pub -t 'topic/test' -m 'helloWorld'
 `
-#
-
+*
 * You should see another message in the first terminal window saying another client is connected. You should also see this message in the subscriber terminal:
-#
+*
 `
 topic/test helloWorld
 `
-#
+*
 * We have shown that Mosquitto is configured correctly and we can both publish and subscribe to a topic. When you finish testing all, let's set up below that.
-#
+*
 `
 sudo /etc/init.d/mosquitto start
 `
-#
+*
 
 ***
 ## Step 4: Checking your NodeRED codes with MQTT on Raspberry Pi2
