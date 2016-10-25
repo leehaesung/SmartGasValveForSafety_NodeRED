@@ -134,13 +134,15 @@ Let's stop anonymous clients connecting to our broker by adding a few lines to y
 `
 allow_anonymous false
 `
+#
 `
 password_file /etc/mosquitto/conf.d/passwd
 `
+#
 `
 require_certificate false
 `
-
+#
 * Save and exit your editor (nano in this case).
 * From the current /conf.d directory, create an empty password file:
 #
