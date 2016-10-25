@@ -40,7 +40,35 @@ The following are the materials we will be using :
 
 ***
 ## Step 2: Programming NodeRED on Raspberry Pi2
+### How to start Node-RED on web browser.
+(1) Write down command shown below to a terminal window.
+`
+node-red-start
+`
+(2) You can find an IP address as below.
 
+'Once Node-RED has started, point a browser at http://169.254.170.40:1880'
+
+(3) Open your web browser.
+
+(4) Copy the ip address and paste on web browser.
+
+(5) It will display a visual editor of Node-RED on web browser.
+
+(6) You can start coding with visual editor on web browser.
+
+(7) Try dragging & dropping any node from left hand side to right hand side. It's really easy to code.
+
+( You can conveniently use the visual editor off line as well as on line. )
+
+### Download the 'SmartGasValve_NodeRED.txt' file.
+(1) Click number (1) at the right hand side corner shown in NodeRED on web browser.
+
+(2) Click the Import button on the drop down menu.
+
+(3) Open the Clipboard shown in the above 1st picture.
+
+(4) Lastly, paste the given JSON format text of 'SmartGasValve_NodeRED.txt' in Import nodes editor.
 
 
 ***
