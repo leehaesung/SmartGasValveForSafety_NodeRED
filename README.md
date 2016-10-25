@@ -19,7 +19,23 @@ The following are the materials we will be using :
 
 ***
 ## Step 1: Step 1: Setting up the smart gas valve with Raspberry Pi
+### Assembly steps
+(1) Connect the Raspberry Pi2 with a magnetic switch sensor as shown above in the circuit diagram.
 
+(2) Add a pull-up resistor(4.7 k ohm). If you use a really long wire, you could change approximately 1 k ohm. It depends on your environment.
+
+(3) Connect the magnetic switch sensor with raspberry pi.
+
+* COM --- Ground
+* NO --- GPIO 18
+
+(4) Assemble the magnetic switch sensor with a gas valve at home.
+
+(The magnetic switch sensor should include an adhesive tape on the base.)
+
+(5) Connect a portable battery with Raspberry Pi2.
+
+(Use any portable battery to connect with same size connector cable on Raspberry Pi2. )
 
 
 ***
