@@ -150,7 +150,6 @@ sudo mosquitto_passwd -c /etc/mosquitto/conf.d/passwd pi
 `
 #
 ### You will be asked to enter your password twice. Enter the password you wish to use for the user you defined.
-
 ## Testing Mosquitto on Raspberry Pi
 ### Now that Mosquitto is installed we can perform a local test to see if it is working:
 ### Open three terminal windows. In one, make sure the Mosquitto broker is running:
@@ -170,7 +169,6 @@ mosquitto_sub -v -t 'topic/test'
 `
 mosquitto_pub -t 'topic/test' -m 'helloWorld'
 `
-#
 ### You should see another message in the first terminal window saying another client is connected. You should also see this message in the subscriber terminal:
 #
 `
