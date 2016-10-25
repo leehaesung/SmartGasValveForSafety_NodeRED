@@ -134,13 +134,12 @@ Create a config file:
 
 #
 
-`
+
+````````
 cd /etc/mosquitto/conf.d/
-`
-#
-`
 sudo nano mosquitto.conf
-`
+````````
+
 
 #
 
