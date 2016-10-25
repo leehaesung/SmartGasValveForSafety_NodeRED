@@ -76,92 +76,80 @@ The following are the materials we will be using :
 ***
 ## Step 3: Setting up MQTT v3.1 on Raspberry Pi2
 ### Setting up MQTT v3.1 on Raspberry Pi2
-This message broker(Mosquitto) is supported by MQTT v3.1 and it is easily installed on the Raspberry Pi and somewhat less easy to configure. Next we step through installing and configuring the Mosquitto broker.
-
-* We are going to install & test the MQTT “mosquitto” on terminal window.
+This message broker(Mosquitto) is supported by MQTT v3.1 and it is easily installed on the Raspberry Pi and somewhat less easy to configure. Next we step through installing and configuring the Mosquitto broker. We are going to install & test the MQTT “mosquitto” on terminal window.
 #
 `
 curl -O http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
 `
-#
 `
 sudo apt-key add mosquitto-repo.gpg.key
 `
-#
 `
 rm mosquitto-repo.gpg.key
 `
-#
 `
 cd /etc/apt/sources.list.d/
 `
-#
 `
 sudo curl -O http://repo.mosquitto.org/debian/mosquitto-repo.list
 `
-#
 `
 sudo apt-get update
 `
-#
 
-* Next install the broker and command line clients:
-#
+Next install the broker and command line clients:
+
 * mosquitto – the MQTT broker (or in other words, a server)
 * mosquitto-clients – command line clients, very useful in debugging
 * python-mosquitto – the Python language bindings
-#
+
 `
 sudo apt-get install mosquitto mosquitto-clients python-mosquitto
 `
-#
+*
 As is the case with most packages from Debian, the broker is immediately started. Since we have to configure it first, stop it.
-#
+*
 `
 sudo /etc/init.d/mosquitto stop
 `
-#
+*
 
 Now that the MQTT broker is installed on the Pi we will add some basic security.
-#
+*
 Create a config file:
-#
+*
 `
 cd /etc/mosquitto/conf.d/
 `
-#
 `
 sudo nano mosquitto.conf
 `
-#
+*
 Let's stop anonymous clients connecting to our broker by adding a few lines to your config file. To control client access to the broker we also need to define valid client names and passwords. Add the lines:
-#
+*
 `
 allow_anonymous false
 `
-#
 `
 password_file /etc/mosquitto/conf.d/passwd
 `
-#
 `
 require_certificate false
 `
 
 * Save and exit your editor (nano in this case).
 * From the current /conf.d directory, create an empty password file:
-#
+*
 `
 sudo touch passwd
 `
-#
-
+*
 * We will to use the mosquitto_passwd tool to create a password hash for user pi:
-#
+*
 `
 sudo mosquitto_passwd -c /etc/mosquitto/conf.d/passwd pi
 `
-#
+*
 
 * You will be asked to enter your password twice. Enter the password you wish to use for the user you defined.
 
