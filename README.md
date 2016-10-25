@@ -107,13 +107,13 @@ sudo apt-get update
 sudo apt-get install mosquitto mosquitto-clients python-mosquitto
 `
 #
-### As is the case with most packages from Debian, the broker is immediately started. Since we have to configure it first, stop it.
+As is the case with most packages from Debian, the broker is immediately started. Since we have to configure it first, stop it.
 #
 `
 sudo /etc/init.d/mosquitto stop
 `
 #
-### Now that the MQTT broker is installed on the Pi we will add some basic security.
+Now that the MQTT broker is installed on the Pi we will add some basic security.
 #
 Create a config file:
 #
@@ -124,7 +124,7 @@ cd /etc/mosquitto/conf.d/
 sudo nano mosquitto.conf
 `
 #
-### Let's stop anonymous clients connecting to our broker by adding a few lines to your config file. To control client access to the broker we also need to define valid client names and passwords. Add the lines:
+Let's stop anonymous clients connecting to our broker by adding a few lines to your config file. To control client access to the broker we also need to define valid client names and passwords. Add the lines:
 #
 `
 allow_anonymous false
@@ -143,16 +143,16 @@ require_certificate false
 sudo touch passwd
 `
 #
-#### We will to use the mosquitto_passwd tool to create a password hash for user pi:
+We will to use the mosquitto_passwd tool to create a password hash for user pi:
 #
 `
 sudo mosquitto_passwd -c /etc/mosquitto/conf.d/passwd pi
 `
 #
-### You will be asked to enter your password twice. Enter the password you wish to use for the user you defined.
+You will be asked to enter your password twice. Enter the password you wish to use for the user you defined.
 ## Testing Mosquitto on Raspberry Pi
-### Now that Mosquitto is installed we can perform a local test to see if it is working:
-### Open three terminal windows. In one, make sure the Mosquitto broker is running:
+Now that Mosquitto is installed we can perform a local test to see if it is working:
+Open three terminal windows. In one, make sure the Mosquitto broker is running:
 #
 `
 mosquitto
@@ -164,18 +164,19 @@ mosquitto
 mosquitto_sub -v -t 'topic/test'
 `
 #
-### You should see the first terminal window echo that a new client is connected. In the next terminal, run the command line publisher:
+You should see the first terminal window echo that a new client is connected. In the next terminal, run the command line publisher:
 #
 `
 mosquitto_pub -t 'topic/test' -m 'helloWorld'
 `
-### You should see another message in the first terminal window saying another client is connected. You should also see this message in the subscriber terminal:
+#
+You should see another message in the first terminal window saying another client is connected. You should also see this message in the subscriber terminal:
 #
 `
 topic/test helloWorld
 `
 #
-### We have shown that Mosquitto is configured correctly and we can both publish and subscribe to a topic. When you finish testing all, let's set up below that.
+We have shown that Mosquitto is configured correctly and we can both publish and subscribe to a topic. When you finish testing all, let's set up below that.
 #
 `
 sudo /etc/init.d/mosquitto start
