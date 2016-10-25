@@ -1,4 +1,4 @@
-# Smart Gas Valve For Security By NodeRED, MQTT v3.1
+# Smart Gas Valve For Safety By NodeRED, MQTT v3.1
 
 ***
 
