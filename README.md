@@ -235,12 +235,71 @@ sudo /etc/init.d/mosquitto start
 ***
 
 # Step 4: Checking your NodeRED codes with MQTT on Raspberry Pi2
+When you have already pasted the JSON format of the 'SmartGasValve_NodeRED.txt' on Node-RED, it's automatically set up & coded each data. I have already set up the each data in each node.
 
+(1) Click each node.
+
+(2) Check information inside each node has been prefilled.
+
+(3) Please don't change the set data.
+
+(The above can be customised for more advanced users.)
 
 
 ***
 # Step 5: Adding & Setting up E-Mail, Twitter, and Twilio
+## Searching the Nodes
+Node-RED comes with a core set of useful nodes, but there are a growing number of additional nodes available for install from both the Node-RED project as well as the wider community.
+You can search for available nodes in the Node-RED library or on the npm repository.
 
+* For example, we are going to search Twilio at the npm web. Click here.
+* Next step, we are going to install Twilio on raspberry pi.
+
+## Installing npm packaged node
+To add additional nodes you must first install the npm tool, as it is not included in the default installation. The following commands install npm and then upgrade it to the latest 2.x version.
+
+`
+sudo apt-get update
+`
+#
+`
+sudo apt-get install npm
+`
+#
+`
+sudo npm install -g npm@2.x
+`
+#
+`
+hash -r
+`
+#
+`
+cd /home/pi/.node-red
+`
+
+#
+
+* For example, 'npm install node-red-{example node name}'
+* Copy the 'npm install node-red-node-twilio' from the npm web. Paste it on terminal.
+
+`
+npm install node-red-node-twilio
+`
+#
+`
+You will need to restart Node-RED for it to pick-up the new nodes.
+`
+#
+`
+node-red-stop
+`
+#
+`
+node-red-start
+`
+
+Close your web browser and reopen the web browser.
 
 
 
